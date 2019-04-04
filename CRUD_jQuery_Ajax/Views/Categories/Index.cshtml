@@ -1,0 +1,48 @@
+﻿@model IEnumerable<CRUD_jQuery_Ajax.Models.Categories>
+@{ Layout = null;}
+<div>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Cascading dropdown list</h3>
+        </div>
+    </div>
+    @if (ViewBag.Categories != null)
+    {
+        @Html.DropDownList("Categories", null, "-- Select Categorie --", new { @class = "form-control" })
+
+    }
+    <br />
+    @Html.DropDownList("products", new SelectList(""), "-- Select product --", new { @class = "form-control" })
+</div>
+
+
+
+
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script>
+
+    $(document).ready(function () {
+
+        $("#Categories").change(function () {
+
+            var Cat_id = $(this).val();
+            $.ajax({
+
+                type: "Post",
+                url: "/Categories/GetProductsList?Cat_id=" + Cat_id,
+                contentType: "html",
+                success: function (response) {
+                    //debugger
+                    $("#products").empty();
+                    $("#products").append(response);
+
+                }
+
+            })
+
+        })
+
+    })
+
+</script>
+

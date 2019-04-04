@@ -1,0 +1,62 @@
+﻿@model IEnumerable<CRUD_jQuery_Ajax.Models.Products>
+
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Product_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product_Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product_QTY)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product_Writing_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product_Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Categories.Cat_Name)
+            </th>
+            <th colspan="3" class="text-center">
+                Operations
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr id="row_@item.Product_id">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Product_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Product_Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Product_QTY)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Product_Writing_Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Product_Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Categories.Cat_Name)
+                </td>
+                <td>
+                    <a id="btnjquery" value="Show" data-toggle="tooltip" title="Show Product" class="btn btn-danger btn-sm" onclick=Show('/Products/Details/@item.Product_id')><i class="glyphicon glyphicon-eye-open"></i></a>
+                </td>
+                <td>
+                    <a id="btnjquery" value="Edit" data-toggle="tooltip" title="Edit Product" class="btn btn-danger btn-sm" onclick=EditGet(@item.Product_id,'/Products/Edit/@item.Product_id')><i class="glyphicon glyphicon-edit"></i></a>
+                </td>
+                <td>
+                    <a id="btnjquery" value="Delete" data-toggle="tooltip" title="Delete Product" class="btn btn-danger btn-sm" onclick=Delete(@item.Product_id)><i class="glyphicon glyphicon-trash"></i></a>
+                </td>
+            </tr>
+
+        }

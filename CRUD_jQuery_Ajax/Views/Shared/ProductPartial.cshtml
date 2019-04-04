@@ -1,0 +1,12 @@
+﻿<option value="">--Select State--</option>
+@if (ViewBag.products != null)
+{
+
+    foreach (var item in ViewBag.products)
+    {
+
+        <option value="@item.Value">@item.Text </option>
+
+    }
+
+}

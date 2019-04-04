@@ -1,0 +1,69 @@
+﻿@model IEnumerable<CRUD_jQuery_Ajax.Models.Products>
+
+@{
+    ViewBag.Title = "Top3";
+}
+
+<h2>Top3</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Product_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product_Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product_QTY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product_Writing_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product_Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product_Image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Categories.Cat_Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product_Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product_QTY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product_Writing_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product_Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product_Image)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Categories.Cat_Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Product_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Product_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Product_id })
+        </td>
+    </tr>
+}
+
+</table>

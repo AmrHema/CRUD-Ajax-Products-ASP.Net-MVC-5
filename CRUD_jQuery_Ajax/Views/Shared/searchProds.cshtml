@@ -1,0 +1,29 @@
+﻿@model IEnumerable<CRUD_jQuery_Ajax.Models.Products>
+
+@foreach (var item in Model)
+{
+    <tr id="row_@item.Product_id">
+        <td>
+            @Html.DisplayFor(modelItem => item.Product_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product_Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product_QTY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Categories.Cat_Name)
+        </td>
+        <td>
+            <a id="btnjquery" value="Show" data-toggle="tooltip" title="Show Product" class="btn btn-danger btn-sm" onclick=Show('/Products/Details/@item.Product_id')><i class="glyphicon glyphicon-eye-open"></i></a>
+        </td>
+        <td>
+            <a id="btnjquery" value="Edit" data-toggle="tooltip" title="Edit Product" class="btn btn-danger btn-sm" onclick=EditGet(@item.Product_id,'/Products/Edit/@item.Product_id')><i class="glyphicon glyphicon-edit"></i></a>
+        </td>
+        <td>
+            <a id="btnjquery" value="Delete" data-toggle="tooltip" title="Delete Product" class="btn btn-danger btn-sm" onclick=Delete(@item.Product_id)><i class="glyphicon glyphicon-trash"></i></a>
+        </td>
+    </tr>
+
+}

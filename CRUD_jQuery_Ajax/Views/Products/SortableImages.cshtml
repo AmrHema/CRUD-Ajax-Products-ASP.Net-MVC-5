@@ -1,0 +1,43 @@
+﻿@model IEnumerable<CRUD_jQuery_Ajax.Models.Products>
+
+@{
+    /**/
+
+    ViewBag.Title = "SortableImages";
+}
+
+<h2>SortableImages</h2>
+<div class="panel panel-body" style="min-height:256px">
+
+    <h4>Technotips MVC tutorial</h4>
+
+    <ul class="list-group" id="SortableGallery" style="cursor:move">
+
+        @foreach (var item in Model)
+        {
+            <li class="list-group-item col-xs-4 " style="margin-bottom:30px;">
+                <div>
+                    <img class="img-responsive" src="@Url.Content(item.Product_Image)" style="width:100%; height:200px" />
+                </div>
+            </li>
+        }
+    </ul>
+
+</div>
+
+
+
+<link href="~/Content/themes/base/all.css" rel="stylesheet" />
+@section scripts{
+
+ 
+
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/jquery-ui-1.11.4.min.js"></script>
+    <script>
+        $("#SortableGallery").sortable();
+    </script>
+
+
+
+}

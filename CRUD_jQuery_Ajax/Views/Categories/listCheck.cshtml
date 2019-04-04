@@ -1,0 +1,33 @@
+﻿
+<div class="panel panel-body" style="min-height:256px">
+
+    <div class="col-md-9">
+        <div class="col-md-5">
+            <ul class="list-group" id="ItemList">
+                @if (ViewBag.ItemList != null)
+                {
+                    <li class="list-group-item list-group-item-heading active">
+                        <h4 class="list-group-item-text">Available Items in my store</h4>
+                    </li>
+                    foreach (var item in ViewBag.ItemList)
+                    {
+                        <li class="list-group-item">
+
+                            <div class="checkbox">
+                                <input id="item_@item.ItemID" type="checkbox" checked="@item.IsAvailable" />
+                                <label for="item_@item.ItemID">@item.ItemName</label>
+                            </div>
+
+
+                        </li>
+
+                    }
+                    <li class="list-group-item"><a href="#" class="btn btn-block btn-success" onclick="SaveItems()">Save Item</a></li>
+
+                }
+
+            </ul>
+        </div>
+    </div>
+
+</div>

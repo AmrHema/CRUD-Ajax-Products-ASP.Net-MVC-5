@@ -34,7 +34,9 @@ namespace CRUD_jQuery_Ajax
                       "~/Content/themes/base/jquery-ui.min.css",
                       "~/Content/DataTables/css/jquery.dataTables.min.css",
                       "~/Content/DataTables/css/dataTables.bootstrap.min.css",
-                      "~/Content/site.css"));
+                      "~/Content/hover.css",
+                      "~/Content/site.css"
+                      ));
         }
     }
 }

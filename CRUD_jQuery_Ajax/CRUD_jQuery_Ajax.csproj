@@ -459,6 +459,7 @@
     <Content Include="Content\Datatables\jquery.dataTables.min.css" />
     <Content Include="Content\Datatables\jquery.dataTables_themeroller.css" />
     <Content Include="Content\Datatables\swf\flashExport.swf" />
+    <Content Include="Content\hover.css" />
     <Content Include="Content\images\favicon.ico" />
     <Content Include="Content\images\Sorting icons.psd" />
     <Content Include="Content\images\sort_asc.png" />

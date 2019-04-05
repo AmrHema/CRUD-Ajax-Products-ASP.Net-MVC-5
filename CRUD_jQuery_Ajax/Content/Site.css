@@ -1,7 +1,23 @@
-﻿body {
+﻿* {
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+html, body {
     padding-top: 50px;
     padding-bottom: 20px;
+    width: 100%;
+    height: 100%;
+    background: url(https://subtlepatterns.com/patterns/sativa.png) repeat fixed;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 200;
 }
+
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
@@ -21,4 +37,18 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+
+/*details hover*/
+.details {
+    color: #000000;
+}
+
+.hvr-radial-in:before {
+    background: #fff;
+}
+
+.details-in:hover, .details:focus, .details:active {
+    color: white;
 }

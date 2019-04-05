@@ -1,34 +1,33 @@
 ﻿@model IEnumerable<CRUD_jQuery_Ajax.Models.Products>
 
 @{
-                /**/
+    /**/
 
-                ViewBag.Title = "PreviewProducts";
+    ViewBag.Title = "PreviewProducts";
 }
 
 
 @foreach (var item in Model)
 {
-<div class="thumbnail col-md-3 col-sm-6 col-xs-12">
-    <div class="panel panel-danger text-center text-capitalize">
-        <div class="panel-heading">
-            <h2 class="panel-title">@item.Product_Name</h2>
+    <div class="thumbnail col-md-3 col-sm-6 col-xs-12">
+        <div class="panel panel-danger text-center text-capitalize">
+            <div class="panel-heading">
+                <h2 class="panel-title">@item.Product_Name</h2>
+            </div>
+        </div>
+        <img src="@Url.Content(item.Product_Image)" class="img-responsive img-thumbnail" style="max-height:144px" />
+        <div class="caption">
+            <h3 style="float:left">@item.Product_Price ج.م</h3>
+            <h3 style="float:right">@item.Product_QTY</h3>
+
+            <p></p>
+            <p><button href="#" class="btn btn-success hvr-radial-in details" role="button">See more</button> </p>
         </div>
     </div>
-    <img src="@Url.Content(item.Product_Image)" class="img-responsive img-thumbnail" style="max-height:144px" />
-    <div class="caption">
-        <h3 style="float:left">@item.Product_Price ج.م</h3>
-        <h3 style="float:right">@item.Product_QTY</h3>
-
-        <p></p>
-        <p><a href="#"  class="btn btn-primary" role="button">See more</a> </p>
-    </div>
-</div>
 
 }
 @section scripts {
-    
-    
+
     <script>
         // Show
         function Show(url) {
@@ -40,5 +39,4 @@
             return false;
         }
     </script>
-    }
-
+}
